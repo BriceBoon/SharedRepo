@@ -5,7 +5,7 @@
 Java 11 JRE for your Debian.
 
 ## 2. Organisation
-4-BooksWithRoles contain 2 different folders :
+4-BooksWithRoles contain 2 different foldersssss :
 -group_vars : containing the vars explaining to Ansible which computers should execute the playbook
 -roles: containing the templates, tasks and vars that respectively contain hibernate configuration, the tasks
  that the playbook will execute and database and user configuration
