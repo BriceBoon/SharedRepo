@@ -1,8 +1,8 @@
 # How to use 4-BooksWithRoles
 
 ## 1. What is 4-BooksWithRoles
-4-BooksWithRoles is a playbook that will allow to deploy a Java Api on a specific folder as well as downloading 
-Java 11 JRE for your Debian.
+4-BooksWithRoles is a playbook that will allow to deploy a Java Api on a specific folder.
+The application will run on Java JRE 11 provided by Debian.
 
 ## 2. Organisation
 4-BooksWithRoles contain 2 different folders :
