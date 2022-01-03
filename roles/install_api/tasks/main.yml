@@ -1,0 +1,43 @@
+# Install API main task
+# - deploy Springboot Java artifact on JRE 11 stack
+# - use variables in :
+#    * ../vars/main.yml
+#      owner_user : user owner of app directory
+#      owner_group : group owner of app directory
+#      db_editor: editor/vendor of RDBMS
+#      db_host: database host (IP or hostname)
+#      db_port: database port
+#      db_name: database name
+#      db_user: database user
+#      db_password: database password
+#    * /group_vars/api
+#      appli_dir : directory to deploy the artifact
+---
+# JRE 11 stack as a debian package
+- name: JRE Open JDK
+  apt:
+    name: openjdk-11-jre
+    state: present
+  become: yes
+
+# Create (or check existing) directory to deploy artifact
+- name: Create Directory
+  file:
+    path: "{{ appli_dir }}"
+    state: directory
+    owner: "{{ owner_user }}"
+    group: "{{ owner_group }}"
+    mode: 0700
+  become: yes
+
+# Deploy artifact
+- name: Copy artifact
+  copy:
+    src: movieapi.jar
+    dest: "{{ appli_dir }}"
+
+# Copy configuration from template
+- name: Copy conf api
+  template:
+    src: application.properties.j2
+    dest: "{{ appli_dir }}/application.properties"
