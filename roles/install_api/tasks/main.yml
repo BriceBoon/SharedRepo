@@ -1,5 +1,7 @@
 # Install API main task
+#
 # - deploy Springboot Java artifact on JRE 11 stack
+#
 # - use variables in :
 #    * ../vars/main.yml
 #      owner_user : user owner of app directory
